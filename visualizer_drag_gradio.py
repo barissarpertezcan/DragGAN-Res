@@ -16,7 +16,7 @@ from viz.renderer import Renderer, add_watermark_np
 
 parser = ArgumentParser()
 parser.add_argument('--share', action='store_true',default='True')
-parser.add_argument('--latent-path', type=str)
+parser.add_argument('--latent_path', type=str)
 parser.add_argument('--cache-dir', type=str, default='./checkpoints')
 parser.add_argument(
     "--listen",

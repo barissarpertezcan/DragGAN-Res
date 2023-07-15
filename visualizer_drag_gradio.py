@@ -16,6 +16,7 @@ from viz.renderer import Renderer, add_watermark_np
 
 parser = ArgumentParser()
 parser.add_argument('--share', action='store_true',default='True')
+parser.add_argument('--latent-path', type=str)
 parser.add_argument('--cache-dir', type=str, default='./checkpoints')
 parser.add_argument(
     "--listen",
@@ -72,8 +73,9 @@ def init_images(global_state):
     else:
         state = global_state
 
-    w_pivot = torch.load("latents/latents_116.pt")
-
+    # w_pivot = torch.load("latents/latents_116.pt")
+    w_pivot = torch.load(args.latent_path)
+  
     state['renderer'].init_network(
         state['generator_params'],  # res
         valid_checkpoints_dict[state['pretrained_weight']],  # pkl

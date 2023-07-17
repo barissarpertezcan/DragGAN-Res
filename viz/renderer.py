@@ -385,4 +385,6 @@ class Renderer:
         res.image = img
         res.w = ws.detach().cpu().numpy()
 
+        torch.save(ws, "/content/StyleRes/latents/latents_edited.pt")
+
 #----------------------------------------------------------------------------
